@@ -1,0 +1,41 @@
+.container{
+    height: 300px;
+    width: 50%;
+    font-family: cursive;
+    margin: auto;
+    background-color: rgb(59, 36, 36);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+h1{
+
+    text-align: center;
+    font-weight: 400;
+    font-size: xx-large;
+    color: rgb(246, 72, 72);
+
+}
+
+#display{
+    color: rgb(255, 148, 164);
+    text-align: center;
+    line-height: 3;
+}
+
+.buttons{
+
+    text-align: center;
+    color: #aff13c;
+    line-height: 9;
+}
+
+.buttons > button{
+
+    padding: 2%;
+    width: 20%;
+    font-size: medium;
+    font-family: cursive;
+    border: none;
+    border-radius: 12px;
+    background-color: plum;
+}

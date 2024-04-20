@@ -1,0 +1,97 @@
+/* Fill CSS here */
+*{
+    margin: 6px;
+}
+
+#main{
+    display: flex;
+    justify-content: space-between;
+}
+
+form{
+    width: 24%;
+    padding: 12px;
+    background-color: rgb(237, 254, 255);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.h1{
+    text-align: center;
+    margin-bottom: 28px;
+    word-spacing: 20px;
+    color: rgb(71,108,162);
+    text-decoration: underline;
+    font-family: sans-serif;
+    /* font-family: "Slabo 27px", serif; */
+    font-style: normal;
+    font-weight: 500px;
+}
+
+label{
+
+    font-size: 16px;
+    font-weight: 600;
+    font-family:sans-serif ;
+}
+
+input{
+    padding: 4px;
+    border: none;
+    border-radius: 5px;
+    width: 90%;
+}
+
+select{
+    width: 90%;
+    
+    border: none;
+    padding: 4px;
+}
+
+.submit{
+    color: white;
+    border: none;
+    padding: 7px;
+    border-radius: 13px;
+    background-color: rgb(43,97,158);
+}
+
+table{
+    width: 57%;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+thead{
+    font-size: 14px;
+    font-weight: 400;
+    color:  white;
+    font-family: cursive;
+    background-color: rgb(71,108,162);
+}
+
+th{
+    padding: 6px;
+}
+
+tbody>tr{
+    background-color: rgb(255, 189, 255);
+    font-size: 15px;
+    font-family: cursive;
+}
+
+#filter{
+    font-size: 14px;
+    padding: 6px;
+    font-family: cursive;
+    padding-bottom: 4px;
+    color: rgb(252, 242, 242);
+    background-color: rgb(71,108,162);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+#filterDepartment{
+    background-color: rgb(254, 204, 221);
+}
+
+
+

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #main{
+            background-color: rgb(76, 68, 68);
+            margin: auto;
+            width: 38%;
+            height: 300px;
+        }
+
+        div{
+            text-align: center;
+            padding: 1.5%;
+        }
+        h1{
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-align: center;
+            color: lightgoldenrodyellow;
+        }
+
+        label{
+            font-family:cursive;
+            padding: 6px;
+            border-radius: 5px;
+            color: rgb(3, 3, 89);
+            background-color: rgb(249, 201, 201);
+        }
+        input{
+            width: 50px;
+            padding:9px;
+            text-align: center;
+            border: none;
+            border-radius: 9px;
+        }
+
+        button{
+            margin: 2%;
+            padding: 1%;
+            border: none;
+            font-size: 17px;
+            font-weight: 700;
+            margin-top: 60px;
+            color: rgb(251, 235, 216);
+            border-radius: 9px;
+            background-color: gray;
+            font-family:'Courier New', Courier, monospace;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h1> (●'◡'●) JS Timer (●'◡'●) </h1>
+        <div>
+            <label>Hours</label>
+            <input type="number" id="hours" min="0" value="0">
+
+            <label>Minutes</label>
+            <input type="number" id="minutes" min="0" value="0">
+
+            <label>Seconds</label>
+            <input type="number" id="seconds" min="0" value="0">
+            
+        </div>
+
+        <div>
+            <button onclick="start()" class="start">Start</button>
+            <button onclick="pause()"  class="pause">Pause</button>
+            <button onclick="reset()"  class="reset">Reset</button>
+        </div>
+    
+    </div>
+</body>
+</html>
+<script src="timer.js"></script>
+
+        
+     

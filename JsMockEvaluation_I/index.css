@@ -1,0 +1,17 @@
+h1{
+    text-align: center;
+    color: white;
+    padding: 1%;
+    background-color: rgb(14, 14, 112);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+#navbar{
+    display: flex;
+    padding-top: 2%;
+    padding: 2%;
+    margin-top: -3%;
+    justify-content:space-around;
+    background-color: rgb(62, 62, 128);
+}

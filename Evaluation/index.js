@@ -1,74 +1,112 @@
+let Department = document.querySelector("#Department")
 
-let navbar = document.getElementById("navbar")
+let gender = document.querySelector("#gender")
 
-let tbcontainer = document.getElementById("container")
+let arr = []
 
-let department = document.getElementById("department")
+let arr1 = []
 
-let btnPrevious = document.getElementById("Previous")
+let count = 1
 
-let btnNext = document.getElementById("Next")
+let Salary = document.querySelector("#Salary")
 
-const getdata =(URL) => {
-    fetch(URL)
-    .then((res) => {
-        return res.json()
-    })
-    .then((res) => {
-        console.log(res.data)
-        showdata(res.data)
-    })
+let Tbody = document.querySelector("tbody")
 
-}
+let Button = document.querySelectorAll("button")
 
-function showdata(data){
-
-    data.forEach(function (ele, i){
-
-        let row = document.createElement("tr")
+//Fetch Data using API
+async function getdata(page="1"){
+    try {
+        let res = await fetch(`https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees?page=${page}&limit=10`)
+        let response = await res.json()
+        arr = response.data
+        showData(arr)
+        console.log(response);
+    } 
+    catch (error) {
         
-        row.innerHTML =
-        `<td>${ele.id}</td>
-         <td>${ele.name}</td>
-         <td>${ele.gender}</td>
-         <td>${ele.department}</td>
-         <td>${ele.salary}</td>
-        `
-        tbcontainer.append(row)
-    });
+    }
+}
+getdata(1)
+
+//show data function 
+function showData(data){
+    Tbody.innerHTML = ""
+    data.map((item)=>{
+          
+        let tr = document.createElement("tr")
+        tr.innerHTML = `
+        <td>${item.id}</td>
+        <td>${item.name}</td>
+        <td>${item.gender}</td>
+        <td>${item.department}</td>
+        <td>${item.salary}</td>
+    `
+    Tbody.append(tr)
+    })
 }
 
-btnPrevious.addEventListener('click', () => {
-    pageNo = pageNo - 1
-    if(pageNo > 0){
-        getdata(`https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees?page=${pageNo}limit=10`)
-    }
-    else{
-        pageNo = 1
+// sorting functionality for salary
+Salary.addEventListener('change', function(){
+    if(Salary.value=="HTL"){
+        let newdata = arr1.sort((a,b)=>b.salary-a.salary)
+        showData(newdata)
+    }else if(Salary.value=="LTH"){
+        let newdata = arr1.sort((a,b)=>a.salary-b.salary)
+        showData(newdata) 
     }
 })
 
-btnNext.addEventListener('click', () => {
-    pageNo =pageNo + 1
-    getdata(`https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees?page=${pageNo}limit=10`)
+//pagination for next page
+Button[1].addEventListener('click', function(){
+    if(count<10){
+        count+=1
+        getdata(count)
+    }else{
+        Button [1].disabled   
+    }
 })
 
-function sorting(){
-    let value = salary.value
-    let narr 
-
-    if(value === "asc"){
-        narr = salary.sort(function(a,b){
-            return a.salary - b.salary
-        })
+//pagination for previous page
+Button [0].addEventListener('click', function(){
+    if(count>1){
+        count-=1
+        getdata(count)
     }
-    else if(value === "desc"){
-        narr = salary.sort(function(a,b){
-            return b.salary - a.salary
-        })
+    if(count<1){
+        Button [0].disabled
+        console.log(count);
     }
+})
 
-    showdata(narr)
+
+
+//filter for department
+Department.addEventListener('change', function(){
+    console.log(Department.value);
+    fetchdata(Department.value)
+})
+
+//filter by gender 
+gender.addEventListener('change', function(){
+
+    console.log(arr1);
+    let newdata = arr1.filter((item)=>item.gender==gender.value)
+    showData(newdata)
+        
+})
+
+async function FetchData1(){
+    let res = await fetch("https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees")
+    let response = await res.json()
+    arr1 = response.data
+}
+FetchData1()
+
+async function fetchdata(vla){
+
+    let newdata = arr1.filter((item)=>item.department==vla)
+    showData(newdata)
 }
 
-getdata(' https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees')
+

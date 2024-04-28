@@ -1,0 +1,63 @@
+<!-- Building a Employee Management System with Filter , Sort and Pagination -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div>
+        <h1> Employee Management System</h1>
+        <div id="navbar">
+            
+            <label>Filter by Department:
+                <select id="department">
+                    <option value="">--Select Department--</option>
+                    <option value="hr">- hr</option>
+                    <option value="finance">- finance</option>
+                    <option value="marketing">- marketing</option>
+                    <option value="engineering">- engineering</option>
+                    <option value="operations">- operations</option>
+                </select>
+            </label>
+
+            <label>Filter by Gender:
+                <select id="gender">
+                    <option value="">--Select Gender--</option>
+                    <option value="male">- male</option>
+                    <option value="female">- female</option>
+                </select>
+            </label>
+
+            <label>Filter by Salary:
+                <select id="sort">
+                    <option value="">--Select order--</option>
+                    <option value="asc">- low to high (asc)</option>
+                    <option value="desc">- high to low (desc)</option>
+                </select>
+            </label>
+
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>S.no</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Department</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody id="container">
+                 
+            </tbody>
+        </table>
+        <button id="Previous">Previous</button>
+        <button id="Next">Next</button>
+    </div>
+    
+</body>
+<script src="index.js"></script>
+</html>
